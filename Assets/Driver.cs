@@ -38,4 +38,11 @@ public class Driver : MonoBehaviour
         transform.Translate(0, moveAmount, 0);
         transform.Rotate(0, 0, steerAmount);
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Dorito")) 
+        { 
+            Destroy(other.gameObject); 
+        }
+    }
 }
