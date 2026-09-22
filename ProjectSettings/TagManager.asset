@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Dorito
+  - Package
   layers:
   - Default
   - TransparentFX
