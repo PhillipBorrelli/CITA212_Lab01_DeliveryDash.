@@ -3,14 +3,16 @@ using UnityEngine;
 public class Delivery : MonoBehaviour
 {
     bool hasPackage;
+    [SerializeField] float delay = 1f;
+
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //If (the tag is package)
-        //then (print picked up package to console)
-        if (collision.CompareTag("Package"))
+        
+        if (collision.CompareTag("Package") && !hasPackage)
         {
             Debug.Log("Picked up the Package");
             hasPackage = true;
+            Destroy(collision.gameObject, delay);
         }
         if (collision.CompareTag("Customer") && hasPackage)
         {
