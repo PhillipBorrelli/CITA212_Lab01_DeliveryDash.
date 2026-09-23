@@ -8,6 +8,7 @@ public class Driver : MonoBehaviour
     [SerializeField] float steerSpeed = 2f;
     [SerializeField] float boostSpeed = 10f;
     [SerializeField] float regularSpeed = 5f;
+    
 
     [SerializeField] TMP_Text boostText;
 
@@ -21,6 +22,7 @@ public class Driver : MonoBehaviour
         if (collision.CompareTag("Boost"))
         {
             currentSpeed = boostSpeed;
+            boostText.text = "BOOST ACTIVATED!";
             boostText.gameObject.SetActive(true);
             Destroy(collision.gameObject);
         }
