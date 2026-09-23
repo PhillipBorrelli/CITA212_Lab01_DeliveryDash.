@@ -13,10 +13,15 @@ public class Driver : MonoBehaviour
         if (collision.CompareTag("Boost"))
         {
             currentSpeed = boostSpeed;
+            Destroy(collision.gameObject);
         }
         
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        currentSpeed = regularSpeed;
+    }
 
     void Update()
     {
